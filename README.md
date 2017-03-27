@@ -138,3 +138,145 @@ class Arbre {
     }
 }
 ```
+
+Exemple: **Créations d'arbres, version Avancée**
+
+> Ici on utilise aussi la Factory
+```java
+import java.util.Arrays;
+/**
+ * FLYWEIGHT - POIDS MOUCHE
+ * DESIGN PATTERN
+ * @author choubidouap
+ */
+public class PoidsMoucheAvance {
+    /**
+     * @param args the command line arguments
+     * @throws java.lang.InterruptedException
+     */
+    public static void main(String[] args) throws InterruptedException {
+        Arbre[] arbres;
+        int nombreArbres;
+        
+        // Combien d'arbres seront génerés
+        nombreArbres = 100000;
+        // set la taille du tableau
+        arbres = new Arbre[nombreArbres];
+        // Générer le nombre d'arbre choisis
+        for (int i = 0 ; i < nombreArbres ; i ++){
+            arbres[i] = ArbreFactory.getArbre(getRandomTaille()); // ici on cale un random
+        }
+        
+        System.out.println("Nombres d'arbres: " + arbres.length);
+        System.out.println("Nombres d'objets arbre: " + ArbreFactory.nombreObjets());
+        
+/*--------- TESTS POUR CONSTATER LE FONCTIONNEMENT DU FLYWEIGHT ---------*/
+       // test les feuilles
+        System.out.println(Arrays.toString(arbres[5].lesFeuilles));
+        System.out.println(Arrays.toString(arbres[120].lesFeuilles));
+        System.out.println(Arrays.toString(arbres[32].lesFeuilles));
+        System.out.println(Arrays.toString(arbres[82].lesFeuilles));
+        // test les arbres
+        System.out.println(Arrays.toString(arbres));
+    }
+    
+    // Taille minimum et maximum des arbres
+    static int tailleMin = 20; // compris
+    static int tailleMax = 27; // non-compris
+    /**
+     * Génère un chiffre aléatoire compris entre un maximum et minimum spécifié
+     * @return le chiffre généré 
+     */
+    private static int getRandomTaille() {
+       return (int)(Math.random() * (tailleMax-tailleMin)) + tailleMin;
+    }
+}
+```
+
+```java
+class Feuilles {
+    private final int feuilles;
+    
+    public Feuilles() throws InterruptedException{
+        this.feuilles = 1; // Juste du remplissage
+        System.out.println("Je genère une feuille");
+        Thread.sleep(500); // Simuler un temps d'éxectution long (en millisecondes)
+    }
+}
+```
+
+```java
+public class ArbreFactory {
+    // La clé sera la taille de l'arbre
+    private static final HashMap<Integer, Arbre> arbresMap = new HashMap();
+    
+    /**
+     * Va transmettre un arbre de la taille demandée. Le créera s'il n'existe pas encore. 
+     * @param taille
+     * @return un arbre de la taille correspondante
+     * @throws InterruptedException 
+     */
+    public static Arbre getArbre(int taille) throws InterruptedException{
+        if(arbresMap.containsKey(taille)){ // Si un arbre de la taille correspondante existe
+            System.out.println("Cet arbre existe.");
+            return arbresMap.get(taille); // on retourne l'arbre correspondant
+        } else {
+            // Cet arbre n'existe pas, alors on le crée et on le met dans le HashMap            
+            System.out.println("Un arbre est créé.");
+            arbresMap.put(taille, new Arbre(taille)); // création de l'arbre et ajout dans le HashMap
+            return arbresMap.get(taille); // on retourne l'arbre correspondant
+        }
+    }
+    
+    public static int nombreObjets(){
+        return arbresMap.size();
+    }
+}
+```
+
+```java
+class Arbre {
+    private static Feuilles[] feuilles;
+    public Feuilles[] lesFeuilles; // En public juste pour tester l'adresse dans le main
+    private int taille;
+    
+    /**
+     * Crée un arbre de la taille définie en argument
+     * @param laTaille
+     * @throws InterruptedException 
+     */
+    public Arbre(int laTaille) throws InterruptedException{
+        // Test pour savoir si des feuilles ont déjà été créée
+        if (feuilles != null){
+            // les Feuilles ont déjà étée créée
+            this.lesFeuilles = feuilles;
+        } else {
+            // il faut créer les Feuilles (arrivera que lors de la création du premier arbre)
+            feuilles = getFeuilles();
+            this.lesFeuilles = feuilles;
+        } 
+        this.taille = laTaille;
+        Thread.sleep(2000);
+    }
+    
+    /**
+     * Va créer des feuilles
+     * @return
+     * @throws InterruptedException 
+     */
+    public Feuilles[] getFeuilles() throws InterruptedException{
+        Feuilles[] desFeuilles;
+        int nombreFeuilles = 10;
+        
+        desFeuilles = new Feuilles[nombreFeuilles];
+        for(int i = 0 ; i < nombreFeuilles ; i ++){
+            desFeuilles[i] = new Feuilles();
+        }
+        return desFeuilles;
+    }
+    
+    public void getCoordonnees(){
+        System.out.println("Taille de l'arbre: " + this.taille);
+    }
+}
+```
