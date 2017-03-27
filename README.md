@@ -61,6 +61,8 @@ Exemple: **Les éditeurs de texte**
 
 - **‼️ Ne pas utiliser si l'information partagée peut varier à travers le temps ‼️** 
 
+--------
+
 **Diagramme de séquence**
 ![diagramme de séquence du poids mouche](https://image.noelshack.com/fichiers/2017/13/1490603635-flyweight.png)
 
