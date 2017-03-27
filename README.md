@@ -147,7 +147,7 @@ class Arbre {
 
 Exemple: **Créations d'arbres, version Avancée**
 
-> Ici on utilise aussi la Factory
+> Ici on utilise aussi la Factory. On ne gère pas la position x et y. La seule chose qui change entre les arbres est leur taille.
 ```java
 import java.util.Arrays;
 /**
@@ -286,3 +286,5 @@ class Arbre {
     }
 }
 ```
+
+** Les projets et le pdf de ce documents sont sur le drive. Bises. **
