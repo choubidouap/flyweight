@@ -50,9 +50,6 @@ public class PoidsMoucheString {
 }
 ```
 
-Exemple: **Les éditeurs de texte**
-> Typiquement pour un éditeur de texte on implémente ce design pattern. Imaginons un texte de 100'000 caractères (ça va vite), on ne va pas créer de A à Z 25'093 lettres "e". Ces 25'093 utilisent toutes la même police, voici typiquement une donnée extrinsèque (s'applique à tous les objets "e" en question).
-
 **Quand utiliser ce design pattern ?**
 - Lorsque nous avons beaucoup d'objets dans notre application.
 
