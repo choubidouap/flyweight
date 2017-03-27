@@ -12,6 +12,15 @@ Intentions du pattern
 
 > Gagner du temps d'éxécution pour notre application
 
+Comment ?
+> Partager, autant que possible, des données similaires entre plusieurs objets.
+
+>> **Données intrinsèques**: dépendent de l'objet en question
+
+>> **Données extrinsèques**: ne dépendent pas de l'objet en question
+
+> On va donc faire en sorte que les objets partagent entre eux des données extrinsèques.
+
 **Programmatic example**
 
 Translating our tea example from above. First of all we have tea types and tea maker
