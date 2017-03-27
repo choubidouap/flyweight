@@ -45,7 +45,8 @@ public class PoidsMoucheString {
        // On change ici la valeur de la chaîne
         s2 = "test"; // on assigne "test" à la variable s2
         System.out.println(s1 + " hashcode : " + s1.hashCode() );
-        System.out.println(s2 + " hashcode : " + s2.hashCode() ); // On se rend compte que les 2 variables pointent sur le même objet 
+        System.out.println(s2 + " hashcode : " + s2.hashCode() );
+        // On se rend compte que les 2 variables pointent sur le même objet 
     }   
 }
 ```
