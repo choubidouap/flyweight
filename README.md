@@ -87,6 +87,6 @@ public class PoidsMoucheSimple {
         
         // Dorénavant, n'importe quel arbre qui sera crée pointera sur le même
         // tableau tout en ayant ses propres propriétés x et y.*/
-    }
+   }
 }
-``
+```
