@@ -5,6 +5,13 @@ Les problèmes à résoudre
 
 > Un autre problème est celui du stockage. **Chaque objet occupe de l'espace en mémoire**. Il faut donc faire attention à bien gérer l'espace mémoire occupé par nos objets, histoire de ne pas en être à court un jour.
 
+Intentions du pattern
+> Réduire l'espace mémoire utilisé par les objets
+
+> Réduire les dépenses en termes de calculs
+
+> Gagner du temps d'éxécution pour notre application
+
 **Programmatic example**
 
 Translating our tea example from above. First of all we have tea types and tea maker
