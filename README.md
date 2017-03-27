@@ -1,4 +1,4 @@
-🍃 Flyweight
+🍃 Flyweight - Poids mouche 🍃
 --------
 ```java
 La page est longue car à la fin il y a des exemples de codes.
