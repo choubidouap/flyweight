@@ -51,16 +51,18 @@ Exemple: **Les éditeurs de texte**
 > Typiquement pour un éditeur de texte on implémente ce design pattern. Imaginons un texte de 100'000 caractères (ça va vite), on ne va pas créer de A à Z 25'093 lettres "e". Ces 25'093 utilisent toutes la même police, voici typiquement une donnée extrinsèque (s'applique à tous les objets "e" en question).
 
 **Quand utiliser ce design pattern ?**
-> Lorsque nous avons beaucoup d'objets dans notre application.
+- Lorsque nous avons beaucoup d'objets dans notre application.
 
-> Lorsque les coûts en stockage sont élevés.
+- Lorsque les coûts en stockage sont élevés.
 
-> Les objets possèdent des mêmes caractéristiques. (ils pourront donc se partager des données)
+- Les objets possèdent des mêmes caractéristiques. (ils pourront donc se partager des données)
 
-> L'application n'a pas besoin d'objet unique.
+- L'application n'a pas besoin d'objet unique.
 
-> **‼️ Ne pas utiliser si l'information partagée peut varier à travers le temps ‼️** 
+- **‼️ Ne pas utiliser si l'information partagée peut varier à travers le temps ‼️** 
 
+**Diagramme de séquence**
+![diagramme de séquence du poids mouche](https://image.noelshack.com/fichiers/2017/13/1490603635-flyweight.png)
 
 Exemple: **Créations d'arbres**
 > Admettons que dans notre application nous voulons créer des arbres identiques. Les seules choses qui les différencient sont leurs positions X et Y.
