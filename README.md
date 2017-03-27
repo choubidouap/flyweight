@@ -64,6 +64,8 @@ Exemple: **Les éditeurs de texte**
 **Diagramme de séquence**
 ![diagramme de séquence du poids mouche](https://image.noelshack.com/fichiers/2017/13/1490603635-flyweight.png)
 
+--------
+
 Exemple: **Créations d'arbres**
 > Admettons que dans notre application nous voulons créer des arbres identiques. Les seules choses qui les différencient sont leurs positions X et Y.
 > Nos données extrinsèques seront les données relatives à l'aspect visuels des arbres.
