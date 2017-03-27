@@ -89,23 +89,4 @@ public class PoidsMoucheSimple {
         // tableau tout en ayant ses propres propriétés x et y.*/
     }
 }
-```
-**Programmatic example**
-
-Translating our tea example from above. First of all we have tea types and tea maker
-
-```java
-class TeaMaker
-{
-    protected $availableTea = [];
-
-    public function make($preference)
-    {
-        if (empty($this->availableTea[$preference])) {
-            $this->availableTea[$preference] = new KarakTea();
-        }
-
-        return $this->availableTea[$preference];
-    }
-}
-```
+``
