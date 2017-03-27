@@ -1,5 +1,7 @@
 🍃 Flyweight
 ---------
+La page est longue car à la fin il y a des exemples de codes.
+--------
 **Les problèmes à résoudre**
 > La création d'objet prend du temps. On est d'accord, à chaque nouvel objet il faut exécuter tout le code correspondant. Le problème c'est que **l'exécution de ce code peut prendre du temps**. On ne parle peut-être pas de minutes, mais même quelques millisecondes on déjà un impacte.
 
