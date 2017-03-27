@@ -18,9 +18,9 @@ La page est longue car à la fin il y a des exemples de codes.
 **Comment ?**
 > Partager, autant que possible, des données similaires entre plusieurs objets.
 
-> **Données intrinsèques**: dépendent de l'objet en question
+- **Données intrinsèques**: dépendent de l'objet en question
 
-> **Données extrinsèques**: ne dépendent pas de l'objet en question
+- **Données extrinsèques**: ne dépendent pas de l'objet en question
 
 > On va donc faire en sorte que les objets partagent entre eux des données extrinsèques.
 
@@ -73,8 +73,8 @@ Exemple: **Les éditeurs de texte**
 
 Exemple: **Créations d'arbres**
 > Admettons que dans notre application nous voulons créer des arbres identiques. Les seules choses qui les différencient sont leurs positions X et Y.
-> Nos données extrinsèques seront les données relatives à l'aspect visuels des arbres.
-> Nos données intrinsèques seront les données de positions. Ces donnée sont propres à chaques arbres.
+- Nos données extrinsèques seront les données relatives à l'aspect visuels des arbres.
+- Nos données intrinsèques seront les données de positions. Ces donnée sont propres à chaques arbres.
 ```java
 import java.util.Arrays;
 public class PoidsMoucheSimple {
