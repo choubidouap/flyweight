@@ -90,3 +90,51 @@ public class PoidsMoucheSimple {
    }
 }
 ```
+
+```java
+class Feuilles {
+    private final int feuilles;
+    
+    public Feuilles() throws InterruptedException{
+        this.feuilles = 1;
+        System.out.println("Je genère une feuille");    
+        Thread.sleep(1000); // simule le fait que ça prend du temps
+    }
+}
+```
+```java 
+class Arbre {
+    private static Feuilles[] feuilles;
+    public Feuilles[] lesFeuilles; // En public juste pour tester l'adresse dans le main
+    private Feuilles[] desFeuilles; // intérmédiaire, utilisé une fois pour la méthode getFeuilles(
+    private int x;
+    private int y;
+    
+    public Arbre(int leX, int leY) throws InterruptedException{
+        // Il faut créer les Feuilles ici
+        if (feuilles != null){
+            // les Feuilles ont déjà étée crée
+            this.lesFeuilles = feuilles;
+        } else {
+            // il faut créer les Feuilles (arrivera que lors de la création du premier arbre)
+            feuilles = getFeuilles();
+            this.lesFeuilles = feuilles;
+        } 
+        this.x = leX;
+        this.y = leY;
+        System.out.println("Un arbre apparaît.");
+    }
+    
+    public Feuilles[] getFeuilles() throws InterruptedException{
+        desFeuilles = new Feuilles[10];
+        for(int i = 0 ; i < 10 ; i ++){
+            desFeuilles[i] = new Feuilles();
+        }
+        return desFeuilles;
+    }
+    
+    public void getCoordonnees(){
+        System.out.println("En x: " + this.x + " | En y: " + this.y);
+    }
+}
+```
